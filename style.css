@@ -1,0 +1,378 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+:root {
+  --primary-clr: hsl(267, 99%, 41%);
+  --secondary-clr: rgb(24, 143, 255);
+  --secondary-clr-200: hsl(218, 100%, 53%);
+  --error-clr: hsl(0, 100%, 53%);
+
+  --neutral-clr-100: hsl(0, 0%, 100%);
+  --neutral-clr-600: hsl(0, 0%, 67%);
+  --neutral-clr-700: hsl(0, 0%, 28%);
+  --neutral-clr-900: hsl(0, 0%, 0%);
+}
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+a,
+p,
+ul,
+input,
+button,
+h1,
+h2,
+h3,
+span {
+  font-family: "Open Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+img {
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: var(--secondary-clr);
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  width: 100%;
+}
+
+.app {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  min-height: 150vh;
+  background-color: var(--neutral-clr-100);
+  background-image: url(./src/yahoo-ads_bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@media (max-width: 64rem) {
+  .app {
+    min-height: 100vh;
+    background-image: none;
+  }
+}
+
+header {
+  background-color: var(--neutral-clr-100);
+  padding: 1rem 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 64rem) {
+  header {
+    display: none;
+  }
+}
+
+.main-logo {
+  width: 9rem;
+}
+
+.container {
+  max-width: 400px;
+  width: 100%;
+  padding: 16px;
+  text-align: center;
+}
+
+ul {
+  font-size: 0.75rem;
+  display: flex;
+  gap: 1rem;
+}
+
+main {
+  padding-right: 0.5rem;
+  max-width: 77rem;
+}
+
+.form-container {
+  box-shadow: 0px 0px 11px -1px rgba(0, 0, 0, 0.15);
+  -webkit-box-shadow: 0px 0px 11px -1px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 0px 0px 11px -1px rgba(0, 0, 0, 0.15);
+  background-color: var(--neutral-clr-100);
+  margin-left: auto;
+  max-width: 22.5rem;
+  min-height: 34.5rem;
+  padding: 2rem 1.5rem;
+}
+
+@media (max-width: 64rem) {
+  .form-container {
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    margin-right: auto;
+  }
+}
+
+.secondary-logo {
+  display: block;
+  width: 7.5rem;
+  margin-bottom: 2rem;
+  margin-inline: auto;
+}
+
+.username-holder {
+  text-align: center;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+}
+
+.title {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--neutral-clr-700);
+}
+
+.subtitle {
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+form {
+  margin-top: 3.5rem;
+}
+
+.input-group {
+  position: relative;
+}
+
+.username-input {
+  width: 100%;
+  padding-block: 0.7rem;
+  border: none;
+  color: var(--neutral-clr-600);
+  border-bottom: 1px solid var(--neutral-clr-600);
+  font-size: 0.9rem;
+  margin-bottom: 0.3rem;
+}
+
+.username-input:focus-visible {
+  outline: none;
+  border-color: var(--secondary-clr);
+  color: var(--neutral-clr-900);
+}
+
+.username-input.show-icon {
+  padding-left: 2.2rem;
+}
+
+.icon {
+  color: var(--neutral-clr-900);
+  display: none;
+  opacity: 0.7;
+  scale: 1.1;
+}
+
+.show-icon--icon {
+  display: block;
+  position: absolute;
+  top: 1.1rem;
+  left: 0.5rem;
+}
+
+.username-input:focus + .show-icon--icon {
+  color: var(--primary-clr);
+}
+
+.error-message {
+  color: var(--error-clr);
+  font-size: 0.8rem;
+  text-align: left;
+}
+
+.btn-next {
+  width: 100%;
+  border: none;
+  border-radius: 2rem;
+  padding-block: 0.7rem;
+  margin-top: 1.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--neutral-clr-100);
+  background-color: var(--secondary-clr);
+  transition: background-color 0.2s ease, color 0.2s ease;
+  cursor: pointer;
+}
+
+.btn-next:hover {
+  background-color: var(--secondary-clr-200);
+}
+
+.btn-next:focus-visible {
+  background-color: var(--secondary-clr-200);
+  outline: transparent;
+}
+
+.fgt-container {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.check-container {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+@media (max-width: 64rem) {
+  .check-container {
+    display: none;
+  }
+}
+
+.btn-secondary {
+  display: block;
+  border-radius: 2rem;
+  padding-block: 0.7rem;
+  margin-top: 1.5rem;
+  width: 100%;
+  font-weight: 600;
+  background-color: var(--neutral-clr-100);
+  color: var(--secondary-clr);
+  border: 1px solid var(--secondary-clr);
+  text-align: center;
+  font-size: 1.1rem;
+}
+
+.btn-secondary:hover {
+  color: var(--secondary-clr-200);
+  border-color: var(--secondary-clr-200);
+}
+
+span {
+  display: block;
+  margin-top: 1.5rem;
+  font-size: 1rem;
+  text-align: center;
+}
+
+.btn-google {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  padding-block: 0.7rem;
+  border: 1px solid var(--neutral-clr-600);
+  border-radius: 2rem;
+  background-color: #ffffff;
+  color: #374151;
+}
+
+.btn-google:hover {
+  border-color: var(--secondary-clr);
+}
+
+.google-icon {
+  width: 2rem;
+}
+
+.google-icon {
+  max-width: 1.2rem;
+}
+
+.ggl {
+  margin: 0;
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: var(--neutral-clr-900);
+}
+
+/* ///////////////////////////////////// */
+
+.password-input {
+  width: 100%;
+  padding-block: 0.7rem;
+  border: none;
+  color: var(--neutral-clr-900);
+  border-bottom: 1px solid var(--neutral-clr-600);
+  font-size: 0.9rem;
+  margin-bottom: 0.3rem;
+  padding-right: 2rem;
+}
+
+.password-input:focus-visible {
+  outline: none;
+  border-color: var(--secondary-clr);
+}
+
+.show-password-container {
+  display: grid;
+  position: absolute;
+  top: 1rem;
+  right: 0.1rem;
+  grid-template-columns: 1fr;
+  grid-template-columns: 1fr;
+  padding: 0.1rem;
+}
+
+.pass-icon {
+  font-size: 0.85rem;
+  grid-column: 1/2;
+  grid-row: 1/2;
+}
+
+.none {
+  display: none;
+}
+
+.btn-submit {
+  width: 100%;
+  border: none;
+  border-radius: 2rem;
+  padding-block: 0.7rem;
+  margin-top: 1.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--neutral-clr-100);
+  background-color: var(--secondary-clr);
+  transition: background-color 0.2s ease, color 0.2s ease;
+  cursor: pointer;
+  text-align: center;
+}
+
+.btn-submit:hover {
+  background-color: var(--secondary-clr-200);
+}
+
+.btn-submit:focus-visible {
+  background-color: var(--secondary-clr-200);
+  outline: transparent;
+}
+
+.fgt-secondPhase {
+  display: block;
+  margin-top: 2.5rem;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.fgt-secondPhase:hover {
+  color: var(--secondary-clr-200);
+}

